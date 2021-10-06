@@ -5,12 +5,12 @@
 # Install
 1. Clone project
 ```
-git clone git@github.com:hoangpn256/githook-test.git
+git clone git@github.com:hoangpn256/kaopiz-prepush-script.git
 ```
 
 2. Grant permission to install
 ```
-cd githook-test
+cd kaopiz-prepush-script
 chmod +x ./install.sh
 ```
 
