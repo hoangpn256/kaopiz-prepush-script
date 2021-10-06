@@ -3,7 +3,6 @@
 echo "Installing git pre-push ..."
 
 current_path=`pwd`
-file_install_path=""
 leader_path=$current_path/leader/pre-push
 member_path=$current_path/member/pre-push
 

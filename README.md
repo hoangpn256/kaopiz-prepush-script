@@ -23,4 +23,3 @@ chmod +x ./install.sh
 - Using `pwd` command to get project directory want to install pre-push
 - input project directory path
 - input permission
-
