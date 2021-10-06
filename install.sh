@@ -23,7 +23,7 @@ if [[ $permission == '1' || $permission == '0' ]]; then
         cp $member_path $install_path/.git/hooks
     fi
 
-    (cd $install_path;git config advice.ignoredHook false;git init)
+    (cd $install_path;git config advice.ignoredHook false;chmod 766 .git/hooks/pre-push;git init)
     echo "Installing git pre-push done"
     exit 0
 fi
