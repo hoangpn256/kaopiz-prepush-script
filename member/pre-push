@@ -31,7 +31,7 @@ echo "Prepush is checking ... in $url"
 
 while read local_ref local_oid remote_ref remote_oid
 do
-    if [[ ${local_ref#refs/heads/} != $branch ]]; then
+    if [[ ${local_ref#refs/heads/} != $branch || ${remote_ref#refs/heads/} != $branch ]]; then
         echo -e "Can't push to branch != current_branch: ${branch}. Please change branch will be push into current_branch"
         echo "------------------------------"
         exit 1 

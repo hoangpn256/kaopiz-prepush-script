@@ -12,6 +12,7 @@ git clone git@github.com:hoangpn256/kaopiz-prepush-script.git
 ```
 cd kaopiz-prepush-script
 chmod +x ./install.sh
+chmod +x ./install_teamlead.sh
 ```
 
 3. Install pre-push
