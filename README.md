@@ -16,7 +16,8 @@ chmod +x ./install.sh
 
 3. Install pre-push
 ```
-./install.sh
+- Role member: ./install.sh
+- Role teamlead: ./install_teamlead.sh
 ```
 
 4. Note
