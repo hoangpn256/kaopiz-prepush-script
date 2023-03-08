@@ -22,19 +22,23 @@
 remote="$1"
 url="$2"
 customer="e-reverse"
-customer_allow_branch="feature/"
+develop_branch="enhance"
+branch="$(git rev-parse --abbrev-ref HEAD)"
+read -a prefix_branch<<<${branch//"/"/ }
 
 echo "------------------------------"
 echo "Prepush is checking ... in $url"
+echo $branch
 
 while read local_ref local_oid remote_ref remote_oid
 do
-    if [[ $url =~ $customer ]]; then
-        if [[ "${remote_ref##refs/heads}" =~ $customer_allow_branch ]]; then
-            echo "------------------------------"
-            exit 0
-        fi
-        echo -e "Can't push to customer branch ${remote_ref##refs/heads}"
+    if [[ ${local_ref#refs/heads/} != $branch | ${remote_ref#refs/heads/} != $branch ]]; then
+        echo -e "Can't push to branch difference current_branch: ${branch}. Please change branch will be push into current_branch."
+        echo "------------------------------"
+        exit 1 
+    fi
+    if [[ ${prefix_branch} =~ $develop_branch ]]; then
+        echo -e "Can't push to branch develop ${branch} of customer."
         echo "------------------------------"
         exit 1
     fi
