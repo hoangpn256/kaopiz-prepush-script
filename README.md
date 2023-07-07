@@ -7,6 +7,10 @@
 ```
 git clone git@github.com:hoangpn256/kaopiz-prepush-script.git
 ```
+=> Check out branch develop
+```
+git checkout develop
+```
 
 2. Grant permission to install
 ```
