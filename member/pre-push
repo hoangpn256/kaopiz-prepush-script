@@ -23,6 +23,7 @@ remote="$1"
 url="$2"
 customer="e-reverse"
 develop_branch="enhance"
+develop_branch_spt="develop"
 branch=$(git rev-parse --abbrev-ref HEAD)
 read -a prefix_branch<<<${branch//"/"/ }
 
@@ -36,7 +37,7 @@ do
         echo "------------------------------"
         exit 1 
     fi
-    if [[ ${prefix_branch} =~ $develop_branch ]]; then
+    if [[ ${prefix_branch} =~ $develop_branch || ${prefix_branch} =~ $develop_branch_spt ]]; then
         echo -e "Can't push to branch developing ${branch}."
         echo "------------------------------"
         exit 1
